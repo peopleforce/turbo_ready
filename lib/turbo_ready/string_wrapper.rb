@@ -12,8 +12,8 @@ class TurboReady::StringWrapper
     @turbo_stream_strings << turbo_stream_string
   end
 
-  def invoke(...)
-    TurboReady::StringWrapper.new turbo_stream_invoke_tag(...), turbo_stream_strings: turbo_stream_strings
+  def invoke(*args, **kws, &block)
+    TurboReady::StringWrapper.new turbo_stream_invoke_tag(*args, **kws, &block), turbo_stream_strings: turbo_stream_strings
   end
 
   def to_s

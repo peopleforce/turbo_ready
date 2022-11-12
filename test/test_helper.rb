@@ -15,8 +15,8 @@ require "rails/test_help"
 ActionCable.server.config.logger = Logger.new($stdout) if ENV["VERBOSE"]
 
 module ActionViewTestCaseExtensions
-  def render(...)
-    ApplicationController.renderer.render(...)
+  def render(*args, **kws, &block)
+    ApplicationController.renderer.render(*args, **kws, &block)
   end
 end
 
